@@ -10,6 +10,8 @@ data:
   provision-image-secret: "{{ .Values.config.provisionImagePullSecret }}"
   runtime-images: |-
 {{ .Values.config.runtimeImages | indent 4 }}
+  ingress-enabled: "{{ .Values.config.ingressEnabled }}"
+  service-type: "{{ .Values.config.serviceType }}"
 kind: ConfigMap
 metadata:
   name: kubeless-config

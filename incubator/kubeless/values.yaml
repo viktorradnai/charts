@@ -43,6 +43,8 @@ config:
   functionRegistryTLSVerify: "true"
   provisionImage: kubeless/unzip@sha256:f162c062973cca05459834de6ed14c039d45df8cdb76097f50b028a1621b3697
   provisionImagePullSecret: ""
+  ingressEnabled: "false"
+  serviceType: ClusterIP
   runtimeImages: '[
    {
       "ID": "ballerina",
