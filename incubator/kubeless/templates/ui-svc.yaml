@@ -6,6 +6,11 @@ metadata:
   labels:
 {{ include "labels.standard" . | indent 4 }}
     controller: {{ template "kubeless.fullname" . }}-ui
+{{- with .Values.ui.service.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+
 spec:
   ports:
   - name: {{ .Values.ui.service.name }}
