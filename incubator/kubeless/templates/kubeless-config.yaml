@@ -3,7 +3,8 @@ data:
   functions-namespace: {{ default "" .Values.config.functionsNamespace | quote }}
   builder-image: "{{ .Values.config.builderImage }}:{{ .Values.controller.deployment.functionController.image.tag }}"
   builder-image-secret: "{{ .Values.config.builderImagePullSecret }}"
-  deployment: "{{ .Values.config.deploymentTemplate }}"
+  deployment: |-
+{{ .Values.config.deploymentTemplate | indent 4 }}
   enable-build-step: "{{ .Values.config.enableBuildStep }}"
   function-registry-tls-verify: "{{ .Values.config.functionRegistryTLSVerify }}"
   provision-image: "{{ .Values.config.provisionImage }}"
